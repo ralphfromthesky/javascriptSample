@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<form action="" id="form">
+
+    <input type="text" id="text">
+    <div id="msg"></div>
+</form>
+
+<script>
+const form = document.getElementById("form");
+const text = document.getElementById("text");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(text.value);
+    inputText();
+    condition();
+})
+
+
+let data = {};
+const inputText = () => {
+    data = text.value;
+    msg.innerHTML = data;
+}
+
+let same = "this is same";
+let notSame = "not the same";
+const condition = () => {
+    if (text.value == same) {
+        msg.innerHTML = "this is same";
+    } else if ( text.value !== notSame) {
+        msg.innerHTML = "not same";
+    }else {
+        return "ok ralph"
+    }
+}
+
+</script>
+
+</body>
+</html>

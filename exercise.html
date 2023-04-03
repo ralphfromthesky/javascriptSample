@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <button onclick="theDate()">DATE</button> <br>
+        <button onclick="randomNumber('red')">RANDOM</button>
+        <div id="random"></div>
+        <div id="dateToday"></div>
+    </form>
+
+    <script>
+        let dateToday = document.getElementById('dateToday');
+        let random = document.getElementById('random');
+        let form =document.getElementById('form');
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+        })
+        
+
+
+        const theDate = (date = new Date()) => {
+            let theDate = date.getDate();
+            let theMonth = date.getMonth() + 1;
+            let theYear = date.getFullYear()
+            dateToday.innerHTML = `${theDate}/${theMonth}/${theYear}`;
+        }
+
+        const randomNumber = (color) => {
+            let arr = [];
+            for (let i = 1; i <= 1; i++) {
+                arr.push(Math.floor(Math.random() * 999999 - 100000 + 1) + 1);
+                dateToday.innerHTML += '<br>' + arr;
+            }
+
+        }
+    
+    </script>
+</body>
+
+</html>

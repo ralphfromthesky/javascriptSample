@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question and Answer App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .container {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Question and Answer App</h1>
+        <p id="question"></p>
+        <input type="text" id="answer" placeholder="Enter your answer...">
+        <button onclick="checkAnswer()">Check Answer</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        // Array of questions and answers
+        const qa = [
+            {
+                question: "What is the capital of France?",
+                answer: "Paris"
+            },
+            {
+                question: "What is the largest planet in our solar system?",
+                answer: "Jupiter"
+            },
+            {
+                question: "What is the highest mountain in the world?",
+                answer: "Mount Everest"
+            }
+        ];
+
+        // Function to randomly select a question
+        function randomQuestion() {
+            const randomIndex = Math.floor(Math.random() * qa.length);
+            const question = qa[randomIndex].question;
+            const answer = qa[randomIndex].answer;
+            return { question, answer };
+        }
+
+        // Function to check if the answer is correct
+        function checkAnswer() {
+            const answerInput = document.getElementById("answer");
+            const result = document.getElementById("result");
+            const { question, answer } = randomQuestion();
+            if (answerInput.value.toLowerCase() === answer.toLowerCase()) {
+                result.innerHTML = "Correct!";
+            } else {
+                result.innerHTML = `Incorrect! The correct answer is ${answer}.`;
+            }
+            answerInput.value = "";
+            document.getElementById("question").innerHTML = question;
+        }
+
+        // Initialize the app with a random question
+        document.getElementById("question").innerHTML = randomQuestion().question;
+
+    </script>
+</body>
+
+</html>

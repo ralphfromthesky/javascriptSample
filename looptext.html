@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #myDiv {
+        width: 300px;
+        height: 100px;
+        border: 1px solid black;
+        padding: 10px;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+    <div id="myDiv"></div>
+
+	<script>
+		const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae risus in lorem varius auctor vel vel mi. Aliquam euismod volutpat dui non lacinia. Suspendisse porttitor, velit in ultricies sodales, augue risus sollicitudin massa, at aliquet dolor tellus id metus.";
+		const speed = 100; // change the speed of the loop here (in milliseconds)
+		let i = 0;
+
+		function loopText() {
+			if (i < text.length) {
+				document.getElementById("myDiv").innerHTML += text.charAt(i);
+				i++;
+				setTimeout(loopText, speed);
+			}
+			else {
+				i = 0;
+				document.getElementById("myDiv").innerHTML = "";
+				setTimeout(loopText, speed);
+			}
+		}
+
+		loopText();
+	</script>
+</body>
+</html>

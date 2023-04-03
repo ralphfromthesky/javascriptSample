@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .label {
+            height: 5vh;
+            border: 2px solid black;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="label" id="display"></div>
+    <button id="btn1" value="1" onclick="addDigit('1')">1</button>
+    <button value="2" onclick="addDigit('2')">2</button>
+    <button value="3" onclick="addDigit('3')">3</button>
+    <button value="4" onclick="addDigit('4')">4</button>
+    <button value="5" onclick="addDigit('5')">5</button>
+    <button value="6" onclick="addDigit('6')">6</button>
+    <button value="7" onclick="addDigit('7')">7</button>
+    <button value="8" onclick="addDigit('8')">8</button>
+    <button value="9" onclick="addDigit('9')">9</button>
+    <button value="0" onclick="addDigit('0')">0</button>
+    <button value="+" onclick="setOperator('+')">+</button>
+    <button>-</button>
+    <button>/</button>
+    <button onclick="setCalculate()">=</button>
+    <button onclick="clr()">DEL</button>
+
+    <script>
+
+        let display = document.getElementById("display");
+        let firstNumber;
+        let secondNumber;
+        let operator;
+        let arrayNumbers = [];
+
+        const addDigit = (num) => {
+            display.innerHTML += num;
+
+        }
+
+        const setOperator = (op) => {
+            firstNumber = parseFloat(document.getElementById("display").innerHTML);
+            operator = op;
+            clr();
+        }
+
+        const setCalculate = () => {
+            firstNumber = parseFloat(document.getElementById("display").innerHTML);
+            let result = 0;
+            switch (operator) {
+                case "+":
+                    result = firstNumber + firstNumber;
+                    break;
+                default:
+                    result = 0;
+            }
+        }
+        
+
+        const clr = () => {
+            display.innerHTML = "";
+        }
+
+
+    </script>
+
+</body>
+
+</html>
