@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sidebar Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f8f9fa;
+            padding: 20px;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        #sidebar.closed {
+            width: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #content {
+            margin-left: 250px;
+            transition: all 0.3s ease;
+        }
+
+        #content.closed {
+            margin-left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar" class="closed">
+        <h3>Sidebar</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum magna vel massa hendrerit vehicula. Ut semper lectus vel libero ullamcorper, sit amet eleifend massa maximus.</p>
+        <button class="close-btn" onclick="closeSidebar()">&times;</button>
+    </div>
+    <div id="content" class="closed">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <div class="container">
+            <h1>Content Area</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum magna vel massa hendrerit vehicula. Ut semper lectus vel libero ullamcorper, sit amet eleifend massa maximus.</p>
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("closed");
+            document.getElementById("content").classList.toggle("closed");
+        }
+        function closeSidebar() {
+            document.getElementById("sidebar").classList.add("closed");
+            document.getElementById("content").classList.add("closed");
+        }
+    </script>
+</body>
+</html>

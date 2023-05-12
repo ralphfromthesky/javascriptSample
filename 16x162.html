@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+    
+            width: 50vw;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 5px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            margin: 1px;
+            background-color: white;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector('.container');
+        let prevBox;
+
+        // create 16 rows of 16 boxes
+        for (let i = 0; i < 12; i++) {
+            for (let j = 0; j < 12; j++) {
+                // create a new box div
+                const box = document.createElement('div');
+                box.classList.add('box');
+
+                // generate and set a random background color for the box
+                const colors = ['red', 'blue', 'pink', 'yellow', 'black', 'green'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                box.style.backgroundColor = 'white';
+                box.dataset.color = randomColor;
+
+                // add a click event listener to show the box's color
+                box.addEventListener('click', () => {
+                    // hide the previously clicked box, if there is one
+                    if (prevBox) {
+                        prevBox.style.backgroundColor = 'white';
+                    } 
+
+                    // show the color of the current box
+                    box.style.backgroundColor = box.dataset.color;
+
+                    // set the current box as the previous box
+                    prevBox = box;
+                });
+
+                // add the box to the container
+                container.appendChild(box);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

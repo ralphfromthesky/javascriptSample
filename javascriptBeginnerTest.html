@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Question 1
+        // Define a variable called "name" and assign it the value "John".
+        // Print the value of the variable to the console.
+        let name = "john";
+        console.log(name);
+
+        // Question 2
+        // Create an array called "numbers" that contains the values 1, 2, 3, and 4.
+        // Print the array to the console.
+        let array = [1, 2, 3, 4];
+        console.log(array);
+        // Question 3
+        // Write a function called "double" that takes a number as input and returns its value multiplied by 2.
+        const double = (num) => {
+            return num * 2;
+        }
+
+        // Question 4
+        // Use a for loop to print the numbers from 1 to 10 to the console.
+        for (let i = 1; i <= 10; i++) {
+            console.log(i)
+        }
+
+        // Question 5
+        // Create an object called "person" that has properties for "name", "age", and "gender".
+        // Assign values to these properties and print the object to the console.
+        let person = {
+            name: "ralph",
+            age: 19,
+            gender: "m"
+        }
+
+        // Question 6
+        // Write a function called "sum" that takes an array of numbers as input and returns the sum of all the numbers.
+        const sum = (array) => {
+            let sums = 0;
+            for (let i = 0; i < array.length; i++) {
+                sums += array[i]
+            }
+            return sums;
+        }
+
+        // Question 7
+        // Use a while loop to print the numbers from 1 to 5 to the console.
+        let i = 0;
+        while (i <= 5) {
+            console.log(i);
+            i++;
+        }
+        // Question 8
+        // Write a function called "reverse" that takes a string as input and returns the string in reverse order.
+        const reverse = (abcd) => {
+            let reversedString = '';
+            for (let i = abcd.length - 1; i >= 0; i++) {
+                reversedString += abcd[i]
+            }
+            return reversedString;
+        }
+        // Question 9
+        // Create a variable called "myAge" and assign it the value of your age.
+        // Create a second variable called "futureAge" that is myAge plus 10.
+        // Print the value of futureAge to the console.
+
+        let myAge = 39;
+        let futureAge = myAge + 10;
+        console.log(futureAge);
+
+        // Question 10
+        // Write a function called "multiply" that takes two numbers as input and returns their product.
+        const multiply = (a, b) => {
+            return a * b;
+        }
+
+        // Question 11
+        // Use a for loop to print the even numbers from 2 to 10 to the console.
+        let even = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let evenThis = [];
+        const evenNum = (even) => {
+            for (let i = 2; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    even.push(i);
+                }
+            }
+            return even;
+        }
+        console.log(evenNum(evenThis));
+        // Question 12
+        // Create an array called "fruits" that contains the values "apple", "banana", and "orange".
+        // Write a for loop that prints each fruit to the console.
+        let fruits = ["apple", "banana", "orange"];
+        const fruiters = () => {
+            for (let i = 0; i < fruits.length; i++) {
+
+            }
+        }
+
+        // Question 13
+        // Write a function called "capitalize" that takes a string as input and returns the same string with the firsrt letter capitalized.
+
+        let myName = 'ralph';
+        const capitalize = (cap) => {
+            return cap.toUpperCase();
+        }
+
+
+        // Question 14
+        // Use a for loop to print the numbers from 10 to 1 to the console.
+        let reversed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const reversing = (rev) => {
+            for (let i = 0; i < rev.length; i++) {
+                rev.sort((a, b) => b - a);
+
+            };
+            return rev;
+        }
+        console.log(reversing(reversed));
+        // Question 15
+        // Create a variable called "isEven" and assign it the value true.
+        // Write an if statement that prints "Even" to the console if isEven is true, and "Odd" if it is false.
+
+        let isEven = true;
+
+        if (isEven) {
+            console.log("Even");
+        } else {
+            console.log("Odd");
+        }
+
+    </script>
+</body>
+
+</html>

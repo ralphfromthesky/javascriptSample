@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .box {
+            height: 40px;
+            width: 30px;
+            border: 2px solid black;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container"></div>
+
+
+    <script>
+        let container = document.querySelector('.container')
+        let box;
+
+
+        const createDiv = () => {
+            for (i = 0; i < 20; i++) {
+                let box = document.createElement('div');
+                box.classList.add('box')
+                container.appendChild(box);
+            }
+        }
+
+        const clickDivs = () => {
+            
+
+        }
+
+
+        createDiv();
+    </script>
+
+</body>
+
+</html>
+
+function arrangeArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      let temp = arr[i];
+      arr[i] = arr[i + 1];
+      arr[i + 1] = temp;
+    }
+  }
+  return arr;
+}
