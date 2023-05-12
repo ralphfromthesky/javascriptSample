@@ -205,10 +205,10 @@ const alphabeticals = (abcd) => {
 let abcdef = ["a", "b", "c", "d", "e", "f"];
 console.log(alphabeticals(abcdef));
 
-const multiply = (a, b) => {
-  return a * b * 3;
-};
-console.log("this is multiply " + multiply(2, 2));
+// const multiply = (a, b) => {
+//   return a * b * 3;
+// };
+// console.log("this is multiply " + multiply(2, 2));
 
 //function for returning even nums
 let even = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -332,17 +332,6 @@ const removeDuplicates = (arr) => {
     }
     
   }
-
-
-  // let noDuplicate = [];
-  // for (let i = 0; i < arr.length; i++) {
-  //   for (let j = i + 1; j < arr.length; j++) {
-  //     if (arr[i] === arr[j] && !noDuplicate.includes(arr[i])) {
-  //       noDuplicate.push(arr[i]);
-  //     }
-  //   }
-  // }
-  // return noDuplicate;
   return newDup;
 };
 
@@ -446,3 +435,7 @@ for (i = 0; i < randomNames.length; i++) {
   }
 }
 
+const multiply = (a, b) => {
+  return a * b * 3;
+};
+console.log("this is multiply " + multiply(2, 2));
