@@ -1,24 +1,25 @@
 let array = [1, 2, 3, 4, 5];
 //deleting first element in the array
 array.shift();
-console.log(array);
+console.log(array); //[ 2, 3, 4, 5 ]
+
 
 let arr2 = [1, 2, 3, 4, 5];
 //adding element in the first of array
 arr2.unshift(9);
-console.log(arr2);
+console.log(arr2);//[ 9, 1, 2, 3, 4, 5 
 
 let arr = [1, 2, 3, 4, 5];
 //removint the last elemt
 arr.pop();
 let arrpop = arr.pop();
-console.log(arr);
-console.log(arrpop);
+console.log(arr); //[ 1, 2, 3 ]
+console.log(arrpop); // 4
 
 let randomArr = [1, 2, 3, 4, 5];
 //adding at the last element of array
 randomArr.push(100);
-console.log(randomArr);
+console.log(randomArr); //[ 1, 2, 3, 4, 5, 100 ]  
 
 let thisArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 for (let i = 1; i <= 9; i++) {
@@ -39,7 +40,7 @@ console.log(k);
 let thisArrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // for sum up all the number array
 let sumAll = thisArrayNumbers.reduce((a, b) => a + b);
-console.log("the total is " + sumAll);
+console.log("the total is " + sumAll); //the total is 45
 
 let newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let sum = 0;
@@ -47,14 +48,15 @@ for (let i = 0; i < newArray.length; i++) {
   //sum up the array
   sum += newArray[i];
 }
-console.log("the overall total is " + sum);
+console.log("the overall total is " + sum);// the overall total is 45
 
 let anotherArray = [];
 for (let i = 0; i < 10; i++) {
   //generate 4 digit number with no negative
   anotherArray.push(Math.floor(Math.random() * (9999 - 1000 + 1)) + 100);
+  //anotherArray.push(Math.floor(Math.random() * (500 - 100 + 1) + 1) + 1);
 }
-console.log("the random total is " + anotherArray);
+console.log("the random total is " + anotherArray); //the random total is 4184,338,5612,2101,8682,6352,8313,3654,8659,2274
 
 let ramdomer = [];
 let total = 0;
@@ -63,7 +65,8 @@ for (let i = 0; i < 100; i++) {
   ramdomer.push(Math.floor(Math.random() * (999999 - 100000 + 1)) + 100);
   total += ramdomer[i];
 }
-console.log("the total of generated random number is " + " " + total);
+console.log("the total of generated random number is " + " " + total); //the total of generated random number is  46208297
+
 
 let anotherArrayNum = [];
 let sumUp = 0;
@@ -71,7 +74,7 @@ for (let i = 1; i < 10; i++) {
   // sum up numbers in array
   sumUp += anotherArray.push(i);
 }
-console.log(" the total is this " + " " + sumUp);
+console.log(" the total is this " + " " + sumUp); // the total is this  135
 
 let arrayNum = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -99,7 +102,8 @@ const newlyArray = [
   [5, 6],
 ];
 const theResult = newlyArray.map((a) => a.reduce((a, b) => (a + b) * 2));
-console.log("this is the result of .map the .reduce " + " " + theResult);
+console.log("this is the result of .map the .reduce " + " " + theResult);//this is the result of .map the .reduce  6,14,22
+
 
 let arr4 = [2, 4, 6, 8, 10];
 //double the total number of array or even triple
@@ -139,7 +143,7 @@ console.log("random 3 digittttt" + " " + emptyArray);
 let arr3 = [1, 2, 3, 4, 5, 7, 8, 9, 10];
 //deleting then adding element inside array
 arr3.splice(2, 2, "add");
-console.log("this is the splice method technique" + " " + arr3);
+console.log("this is the splice method technique" + " " + arr3); //this is the splice method technique 1,2,add,5,7,8,9,10
 
 const findDuplicates = (dope) => {
   let duplicate = [];
@@ -158,11 +162,11 @@ console.log("this is the duplicates " + " " + findDuplicates(ran));
 
 let test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 test.splice(test.indexOf(2), 6, "this");
-console.log("this is the result of splice" + " " + test);
+console.log("this is the result of splice" + " " + test); //this is the result of splice 1,this,8,9
 
 let tests = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 tests.splice(3, 2, "thiS");
-console.log("this is splice " + tests);
+console.log("this is splice " + tests); //this is splice 1,2,3,thiS,6,7,8,9
 
 //function for adding array of numbers
 let arrNum = [1, 2, 3, 4, 5];
@@ -171,9 +175,9 @@ const addNum = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     num += arr[i];
   }
-return num
+  return num
 };
-console.log("thisss " + addNum(arrNum));
+console.log("thisss " + addNum(arrNum)); //thisss 15
 
 //function for reversing array of string
 const reverse = (abcd) => {
@@ -185,7 +189,7 @@ const reverse = (abcd) => {
 };
 
 let abcd = ["a", "b", "c", "d", "e", "f"];
-console.log(reverse(abcd));
+console.log(reverse(abcd)); //fedcba
 
 //for random string array
 const randomAbcd = (abcd) => {
@@ -203,7 +207,7 @@ const alphabeticals = (abcd) => {
 };
 
 let abcdef = ["a", "b", "c", "d", "e", "f"];
-console.log(alphabeticals(abcdef));
+console.log(alphabeticals(abcdef)); //A-B-C-D-E-F
 
 // const multiply = (a, b) => {
 //   return a * b * 3;
@@ -221,7 +225,7 @@ const evenNum = (enums) => {
   }
   return enums;
 };
-console.log("this is even result " + evenNum(evenThis));
+console.log("this is even result " + evenNum(evenThis)); //this is even result 2,4,6,8,10
 
 //printing array of string
 let fruits = ["apple", "banana", "orange"];
@@ -237,11 +241,11 @@ let myName = "ralph";
 const capitalize = (cap) => {
   return cap.charAt(0).toUpperCase() + cap.slice(1);
 };
-console.log("this is the name " + " " + capitalize(myName));
+console.log("this is the name " + " " + capitalize(myName)); //this is the name  Ralph
 
 // function for randoming random array
 let randomArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const randomArrays = (pasamo) => { 
+const randomArrays = (pasamo) => {
   return pasamo.sort(() => Math.random() - 0.5);
 };
 console.log("this is the random array " + " " + randomArrays(randomArray));
@@ -252,14 +256,14 @@ const reversing = (rev) => {
 
   return rev.sort((a, b) => a - b);
 };
-console.log("arrange order "+ " " + reversing(reversed));
+console.log("arrange order " + " " + reversing(reversed));
 
 // reversing array
 let str = "santolorin";
 const reverseString = (revs) => {
   return revs.split("").reverse().join("");
 };
-console.log("this is the reverse string" + " " + reverseString(str));
+console.log("this is the reverse string" + " " + reverseString(str)); //this is the reverse string nirolotnas
 
 //number of words
 let hisName = "ralph";
@@ -268,7 +272,7 @@ const countWords = (str) => {
 };
 console.log("this is the total of letters " + " " + countWords(hisName));
 
-let hisNames  = hisName.length;
+let hisNames = hisName.length;
 console.log(hisNames);
 
 //function for getting longest string array and longest name
@@ -303,14 +307,14 @@ console.log("this is even numbers " + " " + filterArray(thisIsEven));
 //finding average of numbers array
 let average = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1000];
 const findingAverage = (ave) => {
-  let newGrade = [];
+  let newGrade = 0;
   let grade = 0;
   for (let i = 0; i < ave.length; i++) {
     grade += ave[i];
   }
   return newGrade = grade / ave.length;
 };
-console.log("this is the grade" + " " + findingAverage(average));
+console.log("this is the grade" + " " + findingAverage(average)); //this is the grade 104.5
 
 //for merging arrays of number
 let arrA = [9, 8, 7, 6];
@@ -330,7 +334,7 @@ const removeDuplicates = (arr) => {
         newDup.push(arr[i]);
       }
     }
-    
+
   }
   return newDup;
 };
@@ -355,7 +359,7 @@ const upperCase = (arr) => {
   })
   return cap;
 };
-console.log(upperCase(names));
+console.log(upperCase(names)); //[ 'RALPH', 'RIGOR', 'SANTOLORIN' ]
 
 let thisNum = ["ralph", "rigor"];
 const namer = (arr) => {
@@ -365,7 +369,7 @@ const namer = (arr) => {
   return thisNum;
 };
 
-console.log(namer(thisNum));
+console.log(namer(thisNum)); // is the grade 104.5
 
 //for reversing function
 let revNums = [1, 2, 3, 4, 5];
@@ -399,8 +403,8 @@ console.log(alphabetically(letters)); // Output: ['a', 'b', 'c', 'd', 'e', 'f']
 let dupNumber = [1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 8, 9, 9];
 let thisDuplicate = [];
 const getDup = (arr) => {
-  for (let i = 0; i < arr.length; i++){
-    for (let j = i + 1; j < arr.length; j++){
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j] && !thisDuplicate.includes(arr[i])) {
         thisDuplicate.push(arr[i]);
       }
@@ -410,25 +414,25 @@ const getDup = (arr) => {
 }
 console.log(getDup(dupNumber));
 
-let love = [1,2,3,4,5];
+let love = [1, 2, 3, 4, 5];
 love.sort(() => Math.random() - 0.5)
 console.log(love);
-love.sort((a,b) => b - a);
-let iiiiiii = love.sort((a,b) => b - a);
+love.sort((a, b) => b - a);
+let iiiiiii = love.sort((a, b) => b - a);
 console.log(iiiiiii)
 
 let thisEmptyArray = [];
-thisEmptyArray.push(Math.floor(Math.random() * (999 - 100)+1) +1);
+thisEmptyArray.push(Math.floor(Math.random() * (999 - 100) + 1) + 1);
 console.log(thisEmptyArray);
 
 const Capitalname = (ha) => {
-return ha.length;
+  return ha.length;
 }
 console.log(Capitalname(str));
 
 //searching ngmae of an array
 let randomNames = ['ralph', 'tess', 'mharie', 'como', 'louis'];
-for (i = 0; i < randomNames.length; i++) {
+for (let i = 0; i < randomNames.length; i++) {
   if (randomNames[i] == 'como') {
     console.log(' i found the name of: ' + randomNames[i]);
     break;
@@ -439,3 +443,29 @@ const multiply = (a, b) => {
   return a * b * 3;
 };
 console.log("this is multiply " + multiply(2, 2));
+
+let numArray = [9, 5, 4, 8, 2, 4, 6, "a"];
+let ok = numArray.includes(1);
+console.log("this is the includes " + ok); //this is the includes false
+
+let thisNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const addingNum = (arr) => {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++) {
+    num += arr[i];
+  }
+  return num
+}
+
+console.log(addingNum(thisNumArr));
+
+let forMap = [1, 2, 3, 4, 5];
+let anuhan = forMap.map((forMap) => {
+  return forMap * 2;
+})
+console.log(anuhan);
+
+let colors  = ['blue', 'white', 'red'];
+colors.forEach((colors) => {
+  console.log(colors);
+})
