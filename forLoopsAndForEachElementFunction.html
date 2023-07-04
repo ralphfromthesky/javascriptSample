@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button class="mybtn">click</button>
+        <button class="mybtn">click</button>
+        <button class="mybtn">click</button>
+        <button class="mybtn">click</button>
+        <button class="mybtn">click</button>
+        <button class="mybtn">click</button>
+    </div>
+    <div>
+        <button class="tupac">click it</button>
+        <button class="tupac">click it</button>
+        <button class="tupac">click it</button>
+        <button class="tupac">click it</button>
+        <button class="tupac">click it</button>
+        <button class="tupac">click it</button>
+    </div>
+    <script>
+
+        const button = document.querySelectorAll('.mybtn')
+        const buttones = document.querySelectorAll('.tupac')
+
+
+
+        button.forEach((buttons) => {
+            buttons.addEventListener('click', () => {
+                buttons.style.backgroundColor = 'red';
+                buttons.textContent = 'yes';
+                buttons.style.color = 'blue'
+            })
+        })
+        // or you can use for loops
+        for (let i = 0; i < buttones.length; i++) {
+            buttones[i].addEventListener('click', () => {
+                buttones[i].style.backgroundColor = 'pink';
+                buttones[i].textContent = 'nope';
+                buttones[i].style.color = 'orange';
+                buttones[i].style.padding = '10px';
+                buttones[i].style.borderRadius = '10px';
+
+
+            })
+        }
+    </script>
+</body>
+
+</html>

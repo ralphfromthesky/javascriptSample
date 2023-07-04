@@ -469,3 +469,10 @@ let colors  = ['blue', 'white', 'red'];
 colors.forEach((colors) => {
   console.log(colors);
 })
+
+let button = document.querySelectorAll('.myclass')
+button.forEach((button)=>{
+button.addEventListener('click', ()=>{
+
+})
+})
