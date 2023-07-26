@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bored API Example</title>
+</head>
+
+<body>
+    <h1>Bored API Activity</h1>
+    <div id="activity"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+const apiUrl = 'https://www.boredapi.com/api/activity';
+
+        const getActivity = async () => {
+            try {
+                const response = await axios.get(apiUrl);
+                return response.data;
+            } catch (error) {
+                console.log('Error:', error);
+                return null;
+            }
+        };
+
+        const displayActivity = async () => {
+            const activityContainer = document.getElementById('activity');
+            try {
+                const activityData = await getActivity();
+                if (activityData) {
+                    const activity = activityData.key;
+                    activityContainer.textContent = `Activity: ${activity}`;
+                } else {
+                    activityContainer.textContent = 'Failed to fetch activity';
+                }
+            } catch (error) {
+                console.log('Error:', error);
+                activityContainer.textContent = 'Error occurred';
+            }
+        };
+
+        displayActivity();
+    </script>
+</body>
+
+</html>

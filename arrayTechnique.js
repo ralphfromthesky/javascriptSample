@@ -470,9 +470,12 @@ colors.forEach((colors) => {
   console.log(colors);
 })
 
-let button = document.querySelectorAll('.myclass')
-button.forEach((button)=>{
-button.addEventListener('click', ()=>{
+function addToLocalStorage() {
+  localStorage.setItem('ralph', 'true');
+  console.log('Added ralph: true to localStorage');
+}
 
-})
-})
+addToLocalStorage();
+
+const storedValue = localStorage.getItem('ralph');
+console.log('Stored value for ralph:', storedValue);

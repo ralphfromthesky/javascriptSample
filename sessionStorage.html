@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>session-storage-example</title>
+</head>
+
+<body>
+
+  <script>
+    const user = {
+      username: 'JohnDoe',
+      email: 'johndoe@example.com',
+      age: 30
+    };
+
+    // Storing an object in localStorage
+    localStorage.setItem('user', JSON.stringify(user));
+
+  </script>
+</body>
+
+</html>

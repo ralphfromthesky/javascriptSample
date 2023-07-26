@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Translation Example</title>
+</head>
+
+<body>
+    <div class="translated" data-key="cn9"></div>
+    <div class="translated" data-key="cn10"></div>
+    <div class="translated" data-key="cn11"></div>
+    <div class="translated" data-key="cn12"></div>
+    <div class="translated" data-key="cn13"></div>
+    <div class="translated" data-key="cn14"></div>
+    <div class="translated" data-key="cn15"></div>
+    <div class="translated" data-key="cn16"></div>
+
+    <button id="btnEn">English</button>
+    <button id="btnVi">Tiếng Việt</button>
+    <button id="btnPi">portu</button>
+
+    <script>
+        const translations = {
+            en: {
+                cn9: 'Overview',
+                cn10: 'Transaction Record',
+                cn11: 'Betting Record',
+                cn12: 'User Profile',
+                cn13: 'Code Scanning Amount',
+                cn14: 'Reward Points',
+                cn15: 'Inbox',
+                cn16: 'Logout',
+            },
+            vi: {
+                cn9: '个人浏览',
+                cn10: '存取转账记录',
+                cn11: '投注记录',
+                cn12: '安全中心',
+                cn13: '打码量记录',
+                cn14: '积分管理',
+                cn15: '短信公告',
+                cn16: '会员登出',
+            },
+            pi: {
+                cn9: 'Visão geral',
+                cn10: 'Histórico de transações',
+                cn11: 'Histórico de apostas',
+                cn12: 'Perfil do usuário',
+                cn13: 'Quantidade de digitalização de códigos',
+                cn14: 'Pontos de recompensa',
+                cn15: 'Caixa de entrada',
+                cn16: 'Sair',
+            }
+        };
+
+        function translate(key, lang) {
+            return translations[lang][key] || key; // If translation not found, return the key itself
+        }
+
+        function applyTranslations(lang) {
+            const translatedElements = document.querySelectorAll('.translated');
+            translatedElements.forEach(function (element) {
+                const key = element.dataset.key;
+                const translatedText = translate(key, lang);
+                element.textContent = translatedText;
+            });
+        }
+
+        document.getElementById('btnEn').addEventListener('click',  function () {
+            applyTranslations('en');
+        });
+
+        document.getElementById('btnVi').addEventListener('click', function () {
+            applyTranslations('vi');
+        });
+        document.getElementById('btnPi').addEventListener('click', function () {
+            applyTranslations('pi');
+        });
+
+
+        // Apply the default translations (English) on page load
+        applyTranslations('en');
+    </script>
+</body>
+
+</html>
