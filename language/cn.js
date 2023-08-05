@@ -1,4 +1,4 @@
-const cnTranslation = {
+const piTranslations = {
     searchPlaceholder: '账号',
     searchPlaceholder1: '密码',
     searchPlaceholder2: '验证码',

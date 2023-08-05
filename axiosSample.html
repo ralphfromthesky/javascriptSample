@@ -14,12 +14,13 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
 
-const apiUrl = 'https://www.boredapi.com/api/activity';
+    const apiUrl = 'https://www.boredapi.com/api/activity';
 
         const getActivity = async () => {
             try {
                 const response = await axios.get(apiUrl);
                 return response.data;
+                
             } catch (error) {
                 console.log('Error:', error);
                 return null;
@@ -31,8 +32,9 @@ const apiUrl = 'https://www.boredapi.com/api/activity';
             try {
                 const activityData = await getActivity();
                 if (activityData) {
-                    const activity = activityData.key;
+                    const activity = activityData.activity;
                     activityContainer.textContent = `Activity: ${activity}`;
+                    console.log(activity);
                 } else {
                     activityContainer.textContent = 'Failed to fetch activity';
                 }

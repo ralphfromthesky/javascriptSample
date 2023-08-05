@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto number generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<style>
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .lotto-container {
+        border: 2px solid red;
+        width: 70vh;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .number-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button {
+        margin: 10px 0;
+        width: 10vw;
+        height: 6vh;
+    }
+
+    .slideIn {
+        animation: slideInRight 2s ease forwards;
+    }
+    @keyframes slideInRight {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<body>
+    <!-- <div class="container">
+    
+    </div> -->
+
+    <div class="main-container">
+        <div class="lotto-container">
+            <div class="number-container">
+                <button class="btn btn-success" id="6/58">6/58</button>
+                <h3 id="result"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="6/55">6/55</button>
+                <h3 id="result6/55"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="6/49">6/49</button>
+                <h3 id="result6/49"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="6/45">6/45</button>
+                <h3 id="result6/45"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="6/42">6/42</button>
+                <h3 id="result6/42"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="6D">6D</button>
+                <h3 id="result6D"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="4D">4D</button>
+                <h3 id="result4D"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="3D">3D</button>
+                <h3 id="result3D"></h3>
+            </div>
+            <div class="number-container">
+                <button class="btn btn-success" id="2D">2D</button>
+                <h3 id="result2D"></h3>
+            </div>
+
+        </div>
+        <button class="btn btn-danger" id="reset">Reset</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script>
+
+        const lotto1 = document.getElementById('6/58');
+        const result = document.getElementById('result');
+        const lotto655 = document.getElementById('6/55');
+        const result655 = document.getElementById('result6/55');
+        const lotto649 = document.getElementById('6/49');
+        const result649 = document.getElementById('result6/49');
+        const lotto645 = document.getElementById('6/45');
+        const result645 = document.getElementById('result6/45');
+        const lotto642 = document.getElementById('6/42');
+        const result642 = document.getElementById('result6/42');
+        const lotto6D = document.getElementById('6D');
+        const result6D = document.getElementById('result6D');
+        const lotto4D = document.getElementById('4D');
+        const result4D = document.getElementById('result4D');
+        const lotto3D = document.getElementById('3D');
+        const result3D = document.getElementById('result3D');
+        const lotto2D = document.getElementById('2D');
+        const result2D = document.getElementById('result2D');
+        const reset = document.getElementById('reset');
+
+
+        const generateWinNumber = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 58) + 1;
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result.classList.add('slideIn')
+            result.textContent = win;
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers', lottoNum.join(','));
+        }
+        const generateWinNumber655 = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers655');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 55) + 1;
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result655.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers655', lottoNum.join(','));
+        }
+        const generateWinNumber649 = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers649');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 49) + 1;
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result649.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers649', lottoNum.join(','));
+        }
+        const generateWinNumber645 = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers645');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 45) + 1;
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result645.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers645', lottoNum.join(','));
+        }
+        const generateWinNumber642 = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers642');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 42) + 1;
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result642.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers642', lottoNum.join(','));
+        }
+        const generateWinNumber6D = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers6D');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 9);
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result6D.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers6D', lottoNum.join(','));
+        }
+        const generateWinNumber4D = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers4D');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 4) {
+                let randomNumber = Math.floor(Math.random() * 9);
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result4D.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers4D', lottoNum.join(','));
+        }
+        const generateWinNumber3D = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers3D');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 3) {
+                let randomNumber = Math.floor(Math.random() * 9);
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result3D.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers3D', lottoNum.join(','));
+        }
+        const generateWinNumber2D = () => {
+            let lottoNum = [];
+            let usedNumbers = new Set();
+
+            // Check if there are previously generated numbers in localStorage
+            const storedNumbers = localStorage.getItem('lottoNumbers2D');
+            if (storedNumbers) {
+                lottoNum = storedNumbers.split(',').map(Number);
+                usedNumbers = new Set(lottoNum);
+            }
+
+            while (lottoNum.length < 2) {
+                let randomNumber = Math.floor(Math.random() * 9);
+                if (!usedNumbers.has(randomNumber)) {
+                    lottoNum.push(randomNumber);
+                    usedNumbers.add(randomNumber);
+                }
+            }
+
+            let win = lottoNum.join('-');
+            result2D.textContent = win;
+
+            // Store the generated numbers in localStorage
+            localStorage.setItem('lottoNumbers3D', lottoNum.join(','));
+        }
+        lotto1.addEventListener('click', generateWinNumber);
+        lotto655.addEventListener('click', generateWinNumber655);
+        lotto649.addEventListener('click', generateWinNumber649);
+        lotto645.addEventListener('click', generateWinNumber645);
+        lotto642.addEventListener('click', generateWinNumber642);
+        lotto6D.addEventListener('click', generateWinNumber6D);
+        lotto4D.addEventListener('click', generateWinNumber4D);
+        lotto3D.addEventListener('click', generateWinNumber3D);
+        lotto2D.addEventListener('click', generateWinNumber2D);
+        reset.addEventListener('click', () => {
+            localStorage.clear()
+            location.href='lotto.html';
+        });
+
+        // generateWinNumber();
+    </script>
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-const piTranslation = {
+const viTranslations = {
     searchPlaceholder: 'Número da conta',
     searchPlaceholder1: 'Senha',
     searchPlaceholder2: 'captcha',

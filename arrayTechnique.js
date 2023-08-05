@@ -35,7 +35,7 @@ console.log(thisArray);
 
 let string = ["name", "friends", "tropa", "enemy"];
 let k = string.join("-");
-console.log(k);
+console.log(`===================${k}`);
 
 let thisArrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // for sum up all the number array
@@ -464,18 +464,20 @@ let anuhan = forMap.map((forMap) => {
   return forMap * 2;
 })
 console.log(anuhan);
+///generate number with no duplicate
+let lottoNum = [];
+let usedNumbers = []; // Array to keep track of generated numbers
+while (lottoNum.length < 6) {
+  // Generate a random number between 1 and 58 (inclusive)
+  let randomNumber = Math.floor(Math.random() * 58) + 1;
 
-let colors  = ['blue', 'white', 'red'];
-colors.forEach((colors) => {
-  console.log(colors);
-})
-
-function addToLocalStorage() {
-  localStorage.setItem('ralph', 'true');
-  console.log('Added ralph: true to localStorage');
+  // Check if the number is not already used
+  if (!usedNumbers.includes(randomNumber)) {
+    lottoNum.push(randomNumber);
+    usedNumbers.push(randomNumber); // Add the number to the usedNumbers array
+  }
 }
 
-addToLocalStorage();
-
-const storedValue = localStorage.getItem('ralph');
-console.log('Stored value for ralph:', storedValue);
+let win = lottoNum.join('-');
+console.log(`------>${win}`);
+/////////////////////////

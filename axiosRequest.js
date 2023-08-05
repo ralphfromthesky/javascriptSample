@@ -13,14 +13,14 @@ axiosRequest
 ////////////////////////////
 const errorRequest = require('axios');
 errorRequest
-    .get('https://httpstat.us/404') //this one for checking erro request
+    .get('https://httpstat.us/404') //this one for checking error request
     .then(bayag => {
         console.log(`eto ang pwede mong gawin ngayon ${bayag.data.activity}`);
     })
     .catch(kupal => {
         console.log(`eto ang error tingnan mo ${kupal}`);
     });
-/////////////////////////////////need to use .then and .catch if you have try and catch inside async and awatit
+/////////////////////////////////no need to use .then and .catch if you have try and catch inside async and awatit
 const axiosRequested = require('axios');
 const getData = async () => {
     try {
