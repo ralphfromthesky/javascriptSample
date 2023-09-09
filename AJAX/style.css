@@ -1,0 +1,36 @@
+.div1 {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    margin: 10px 0;
+    display: none;
+}
+.div2 {
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    margin: 10px 0;
+}
+#panel {
+    padding: 50px;
+    background-color: pink;
+    display: none;
+    border: 2px solid yellow;
+}
+#slideDown {
+    padding: 20px;
+    border: 2px solid red;
+}
+#divAnimate {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: absolute; 
+    /* this one need for animate to move position: absolute;  */
+
+}
+#moreAnim {
+    height: 20px;
+    width: 20px;
+    background-color: black;
+}

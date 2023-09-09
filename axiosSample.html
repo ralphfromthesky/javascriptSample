@@ -33,7 +33,7 @@
                 const activityData = await getActivity();
                 if (activityData) {
                     const activity = activityData.activity;
-                    activityContainer.textContent = `Activity: ${activity}`;
+                    activityContainer.textContent = `this is the activity: ${activity}`;
                     console.log(activity);
                 } else {
                     activityContainer.textContent = 'Failed to fetch activity';

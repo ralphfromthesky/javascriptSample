@@ -35,7 +35,7 @@ console.log(thisArray);
 
 let string = ["name", "friends", "tropa", "enemy"];
 let k = string.join("-");
-console.log(`===================${k}`);
+console.log(`===================${k}`); //===================name-friends-tropa-enemy
 
 let thisArrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // for sum up all the number array
@@ -56,7 +56,7 @@ for (let i = 0; i < 10; i++) {
   anotherArray.push(Math.floor(Math.random() * (9999 - 1000 + 1)) + 100);
   //anotherArray.push(Math.floor(Math.random() * (500 - 100 + 1) + 1) + 1);
 }
-console.log("the random total is " + anotherArray); //the random total is 4184,338,5612,2101,8682,6352,8313,3654,8659,2274
+console.log("the random total is >-------> " + anotherArray); //the random total is 4184,338,5612,2101,8682,6352,8313,3654,8659,2274
 
 let ramdomer = [];
 let total = 0;
@@ -108,9 +108,12 @@ console.log("this is the result of .map the .reduce " + " " + theResult);//this 
 let arr4 = [2, 4, 6, 8, 10];
 //double the total number of array or even triple
 let doubled = arr4.map((a) => a * 2);
+let computed = arr4.map((x) => x * 100);
 let reduceFunction = arr4.reduce((a, b) => a + b);
 console.log("this is the result of " + " " + reduceFunction);
 console.log(doubled);
+console.log(`this is sample of map returning new array  --------> ${computed}`);
+
 
 let p = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 p.sort((a, b) => b - a);
