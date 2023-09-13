@@ -43,8 +43,55 @@
         <div id="newP">no elemet</div>
 
     </div>
+    <form id="forms">
+        <input type="text" name="" id="email">
+        <input type="password" name="" id="password">
+        <button type="submit">send</button>
+    </form>
+    <h1 id="thisText">this is the text</h1>
+    <button id="textbutton">text</button>
+    <h1 id="thisText2"></h1>
+
+    <input type="text" id="tryFocus" onfocus="onFocus()">
+    <hr>
+    <form id="newFormTest" onsubmit="sendData">
+        <input type="text" id="mewEmailTest">
+        <input type="password" id="mewPasswordTest">
+        <input type="text" id="newCaptchaPassword">
+        <button>submit</button>
+
+    </form>
+
+
 
 </body>
 <script src="new.js"></script>
+
+<script>
+    var newForm = $('#newFormTest');
+    var email = newForm.find('#mewEmailTest'), pwd = newForm.find('#mewPasswordTest'), captcha = newForm.find('#newCaptchaPassword');
+    const sendData = (e) => {
+        e.prevenDefault
+        var emails = email.val().trim(),
+            pwds = pwd.val().trim(),
+            captchas = captcha.val().trim()
+            console.log('77777777777777')
+        if (emails === '') {
+            alert('no empty!')
+            email.focus()
+        }
+        if (pwds === '') {
+            alert('no empty pwd');
+            pwd.focus()
+        }
+        if (captchas === '') {
+            alert('no empty pwd');
+            captcha.focus()
+        }
+        console.log('success!')
+
+    }
+
+</script>
 
 </html>

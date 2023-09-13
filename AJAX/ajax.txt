@@ -1,0 +1,24 @@
+$(function() { ... });: This is a jQuery shorthand for the document ready event. It ensures that the enclosed code runs when the DOM is fully loaded and ready for manipulation.
+
+var $form = $("#memberLoginForm");: It selects an element with the ID "memberLoginForm" and assigns it to the $form variable. This is likely the login form element on the web page.
+
+var $email = $form.find("[name='email']"), $pwd = $form.find("[name='password']"), $verifyCode = $form.find("[name='verifyCode']");: These lines find form input elements with the names "email," "password," and "verifyCode" within the $form element and assign them to the respective variables. These variables will be used to access and manipulate the input fields.
+
+function doLogin() { ... }: This is a JavaScript function named doLogin(). It handles the login process when the user submits the form.
+
+It extracts the values of the email, password, and verification code input fields.
+It performs client-side validation to check if the email and password fields are not empty.
+If the fields are empty, it displays a tooltip (using layer.tips()) and returns, preventing the form submission.
+If the fields are not empty, it makes an AJAX POST request to the server (url: baseUrl+"/emailLogin.do") with the user's email, password, and verification code.
+Depending on the response from the server, it either redirects the user to the baseUrl or displays an error message via layer.msg() and refreshes the verification code.
+function refreshVerifyCode() { ... }: This function is responsible for refreshing the verification code (likely an image) on the form. It updates the image source (src) to fetch a new verification code image and clears the verification code input field.
+
+$("#verifyImg").click(function(){ ... });: It attaches a click event handler to an element with the ID "verifyImg" (probably an image used for the verification code). When clicked, it calls the refreshVerifyCode() function to refresh the verification code image.
+
+$verifyCode.click(function(){ ... }).keyup(function(event){ ... });: This code attaches two event handlers to the $verifyCode input field. When clicked or when a key is pressed (keyup event), it triggers the refreshVerifyCode() function to refresh the verification code image. Additionally, if the Enter key (keyCode 13) is pressed, it calls the doLogin() function to attempt a login.
+
+$pwd.keyup(function(event){ ... });: This event handler is attached to the password input field. It listens for keyup events and checks if the Enter key is pressed (keyCode 13). If the Enter key is pressed, it first checks if the verification code input field is empty. If not, it calls the doLogin() function to attempt a login.
+
+$("#loginBtn").click(function(){ ... });: This event handler is attached to the login button with the ID "loginBtn." When clicked, it calls the doLogin() function to attempt a login and returns false to prevent the default form submission behavior.
+
+Overall, this script controls the behavior of a user login form, handling client-side validation, AJAX login requests to the server, and refreshing the verification code image. It also ensures that the form submission is handled via AJAX without a full page refresh.
