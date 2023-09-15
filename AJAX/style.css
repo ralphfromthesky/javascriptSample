@@ -34,3 +34,22 @@
     width: 20px;
     background-color: black;
 }
+.tab {
+    background-color: aquamarine;
+}
+.tab1 {
+    border: 2px solid red;
+    margin: 5px;
+}
+.tab2 {
+    border: 2px solid blue;
+    margin: 5px;
+
+
+}
+.tab3 {
+    border: 2px solid black;
+    margin: 5px;
+
+
+}

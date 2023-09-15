@@ -61,7 +61,7 @@ $(document).ready(function () {
         $(this).html('<h1>ralph santolorin</h1>')
     })
 
-    $('#forms').submit(function (e) {
+    $('#forms').submit((e) => {
         e.preventDefault();
         var formData = {
             name: $('#email').val().trim(),
@@ -97,5 +97,70 @@ $(document).ready(function () {
     tryFocus.addEventListener('click', onFocus)
 
 
+
+    $('#fetchDaTa').submit((e) => {
+        e.preventDefault()
+        if ($('#cityName').val().trim() === '') {
+            alert('please input city');
+            return;
+        }
+        const api_key = 'b110708d82c794716886b2921d982e96';
+        const city = $('#cityName').val()
+        const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
+        $.ajax({
+            url: api_url,
+            method: 'GET',
+            success: (data) => {
+                console.log(data)
+                const cityName = data.name;
+                const temp = data.main.temp
+                const weather = data.weather[0].main
+                $('#ct').text(`${cityName}`)
+                $('#wt').text(`${weather}`)
+                $('#tmp').text(`${temp}`)
+                console.log(cityName + temp + weather)
+
+
+            },
+            error:  (xhr, status, error) => {
+                console.log(`error: ${error} - stattus: ${status} - xhr: ${xhr}`);
+            }
+        })
+        $('#cityName').val('')
+    })
+
+    const letter = ['a', 'b', 'c', 'd', 'e'];
+    for(let i = 0; i < 2; i++){
+        console.log(letter[i])
+    }
+    letter.forEach((x) => {
+        console.log(x.toUpperCase())
+    })
+
+    $('#sampleData').data('key', {name: 'ralph', age: 25})
+    var newData = $('#sampleData').data('key');
+    console.log(newData)
+
+
+$('.tab2').hide();
+$('.tab3').hide();
+$('#b').click(() => {
+    $('.tab2').show()
+    $('.tab1').hide()
+    $('.tab3').hide()
+
+})
+$('#a').click(() => {
+    $('.tab2').hide()
+    $('.tab1').show()
+    $('.tab3').hide()
+
+})
+$('#c').click(() => {
+    $('.tab3').show()
+    $('.tab1').hide()
+    $('.tab2').hide()
+
+})
 
 })
