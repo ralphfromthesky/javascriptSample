@@ -118,3 +118,49 @@ const newNames = (s) => {
 }
 
 newNames(alphaBet);
+
+let student = [
+    { 'name': 'ralph', 'grades': 90 },
+    { 'name': 'shenron', 'grades': 80 },
+
+    { 'name': 'gadwin', 'grades': 85 },
+
+    { 'name': 'james', 'grades': 70 },
+
+    { 'name': 'phia', 'grades': 75 },
+
+]
+
+let passed = student.filter(x => x.grades < 80) //using to filter to look for student whos grade is less than 80
+console.log(passed)
+
+let num = [10, 30, 45, 55, 68, 25];
+let newNum = num.filter(x => x > 50)
+console.log(newNum);
+
+let newStudents = student.filter(x => x['name'].startsWith('p')); // use also filter for searching names 
+console.log(newStudents)
+
+let newNum2 = num.filter((x) => {
+    return x > 10;
+})
+console.log(newNum2)
+
+
+const lookForNum = (arr) => {
+    let a = arr.reduce((a, b) => a + b)
+    console.log(a)
+    return a;
+}
+lookForNum(num);
+let numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const divisible = (num) => {
+    let divs = [];
+    for (let i = 2; i < num.length; i++) {
+        if (i % 2 == 0) {
+            divs.push(i)
+        }
+    }
+    return divs
+}
+console.log(divisible(numbers3))

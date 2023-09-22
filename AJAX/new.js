@@ -90,12 +90,6 @@ $(document).ready(function () {
     // $('#tryFocus').click(() =>{
     //     alert('nowFocus')
     // })
-    const tryFocus = document.getElementById('tryFocus')
-    const onFocus = () => {
-        alert('nowFocus')
-    }
-    tryFocus.addEventListener('click', onFocus)
-
 
 
     $('#fetchDaTa').submit((e) => {
@@ -122,7 +116,7 @@ $(document).ready(function () {
 
 
             },
-            error:  (xhr, status, error) => {
+            error: (xhr, status, error) => {
                 console.log(`error: ${error} - stattus: ${status} - xhr: ${xhr}`);
             }
         })
@@ -130,37 +124,104 @@ $(document).ready(function () {
     })
 
     const letter = ['a', 'b', 'c', 'd', 'e'];
-    for(let i = 0; i < 2; i++){
+    for (let i = 0; i < 2; i++) {
         console.log(letter[i])
     }
     letter.forEach((x) => {
         console.log(x.toUpperCase())
     })
 
-    $('#sampleData').data('key', {name: 'ralph', age: 25})
+    $('#sampleData').data('key', { name: 'ralph', age: 25 })
     var newData = $('#sampleData').data('key');
     console.log(newData)
 
 
-$('.tab2').hide();
-$('.tab3').hide();
-$('#b').click(() => {
-    $('.tab2').show()
-    $('.tab1').hide()
-    $('.tab3').hide()
+    $('.tab2').hide();
+    $('.tab3').hide();
+    $('#b').click(() => {
+        $('.tab2').show()
+        $('.tab1').hide()
+        $('.tab3').hide()
 
-})
-$('#a').click(() => {
-    $('.tab2').hide()
-    $('.tab1').show()
-    $('.tab3').hide()
+    })
+    $('#a').click(() => {
+        $('.tab2').hide()
+        $('.tab1').show()
+        $('.tab3').hide()
 
-})
-$('#c').click(() => {
-    $('.tab3').show()
-    $('.tab1').hide()
-    $('.tab2').hide()
+    })
+    $('#c').click(() => {
+        $('.tab3').show()
+        $('.tab1').hide()
+        $('.tab2').hide()
 
-})
+    })
+
+    // var names = ['alan', 'james', 'angela'];
+    // $('#search').submit((e) => {
+    //     e.preventDefault()
+    //      performSearch()
+    // })
+
+    // const performSearch = () => {
+    //     var searchInput = $('#searchName').val().trim();
+    //     var $results = $('#results');
+    //     $results.empty();
+
+    //     if (searchInput === '') {
+    //         alert('!!!!!!!')
+    //         searchInput.focus()
+    //         return
+    //     }
+    //     if (searchInput !== '') {
+    //         var matchNames = names.filter((name) => {
+    //             return name.includes(searchInput)
+    //         })
+    //         if (matchNames.length > 0) {
+    //             matchNames.forEach((match) => {
+    //                 $results.append(`<li> ${match}</li>`)
+    //             })
+    //         }
+    //         else {
+    //             $results.append('no names')
+    //         }
+    //     }
+
+    // }
+//     var names = ['alan', 'james', 'angela'];
+//     const search = document.getElementById('search')
+//     const searhInput = document.getElementById('searchName');
+//     const result = document.getElementById('results')
+
+//     search.addEventListener('submit', (e) => {
+//         e.preventDefault()
+//         searchName();
+//     })
+//     const searchName = () => {
+//         var searchValue = searhInput.value.trim();
+//         if (searchValue === '') {
+//             alert('hey input!')
+//             return;
+//         }
+//         else if (searchValue !== '') {
+//             result.textContent = ''
+//             var matchName = names.filter((x) => {
+//                 return x.includes(searchValue);
+//             })
+//             if (matchName.length > 0) {
+//                 matchName.forEach((name) => {
+//                     result.textContent = `${name}`;
+//                 })
+//             }
+//             else {
+//                 result.textContent ='no names found!';
+//         }
+
+
+//     }
+// }
+
+
+
 
 })

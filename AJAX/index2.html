@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Example</title>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Search for a name...">
+    <button id="searchButton">Search</button>
+    <ul id="results"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var names = [
+                "John",
+                "Jane",
+                "Bob",
+                "Alice",
+                "Eve",
+                "Charlie",
+                "David",
+                "Frank"
+            ];
+
+            var $searchInput = $('#searchInput');
+            var $searchButton = $('#searchButton');
+            var $results = $('#results');
+
+            $searchButton.click(function () {
+                performSearch();
+            });
+
+            $searchInput.keypress(function (event) {
+                if (event.which == 13) { // Enter key
+                    performSearch();
+                }
+            });
+
+            function performSearch() {
+                var searchTerm = $searchInput.val().trim();
+                $results.empty();
+
+                if (searchTerm !== '') {
+                    var matchingNames = names.filter(function (name) {
+                        return name.toLowerCase().includes(searchTerm.toLowerCase());
+                    });
+
+                    if (matchingNames.length > 0) {
+                        matchingNames.forEach(function (name) {
+                            $results.append('<li>' + name + '</li>');
+                        });
+                    } else {
+                        $results.append('<li>No matching names found.</li>');
+                    }
+                } else {
+                    $results.append('<li>Please enter a search term.</li>');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

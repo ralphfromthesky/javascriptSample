@@ -22,16 +22,14 @@ randomArr.push(100);
 console.log(randomArr); //[ 1, 2, 3, 4, 5, 100 ]  
 
 let thisArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-for (let i = 1; i <= 9; i++) {
   //for randoming the array
-  thisArray.sort(() => Math.random() - 0.5);
+ var random1 = thisArray.sort(() => Math.random() - 0.5);
   //for arranging ascend array
   thisArray.sort((a, b) => a - b);
   //for reversing the array
   thisArray.sort((a, b) => b - a);
   // you can also use thisArray.reverse();
-}
-console.log(thisArray);
+console.log(random1);
 
 let string = ["name", "friends", "tropa", "enemy"];
 let k = string.join("-");
@@ -120,10 +118,10 @@ p.sort((a, b) => b - a);
 p.sort(() => Math.random() - 0.5);
 console.log(p);
 
-let randomNum = [];
+let randomNums = [];
 //generate 6 digit random number
-randomNum.push(Math.floor(Math.random() * (999999 - 100000 + 1)) + 100);
-console.log("the 6 digit number is " + " " + randomNum);
+randomNums.push(Math.floor(Math.random() * (999999 - 100000 + 1)) + 100);
+console.log("the 6 digit number is " + " " + randomNums);
 
 let array5 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // triple each element in array
@@ -150,7 +148,6 @@ console.log("this is the splice method technique" + " " + arr3); //this is the s
 
 const findDuplicates = (dope) => {
   let duplicate = [];
-
   for (let i = 0; i < dope.length; i++) {
     for (let j = i + 1; j < dope.length; j++) {
       if (dope[i] === dope[j] && !duplicate.includes(dope[i])) {
@@ -484,3 +481,33 @@ while (lottoNum.length < 6) {
 let win = lottoNum.join('-');
 console.log(`------>${win}`);
 /////////////////////////
+
+
+function countVowels(inputString) {
+  // Convert the input string to lowercase to handle both uppercase and lowercase vowels
+  const lowercaseString = inputString.toLowerCase();
+  
+  // Define a string containing all the vowels
+  const vowels = "aeiou";
+  
+  // Initialize a counter for vowels
+  let vowelCount = 0;
+  
+  // Loop through each character in the input string
+  for (let i = 0; i < lowercaseString.length; i++) {
+    // Check if the current character is a vowel
+    if (vowels.includes(lowercaseString[i])) {
+      vowelCount++;
+    }
+  }
+  
+  return vowelCount;
+}
+
+// Example usage:
+const input = "Hello, World!";
+const result = countVowels(input);
+console.log(`Number of vowels: ${result}`);
+
+const newArr = [1,2, 'ralph', 'what'];
+console.log(newArr.toString())
