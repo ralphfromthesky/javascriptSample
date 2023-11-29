@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <label for="usernameInput">Enter GitHub Username:</label>
+    <input type="text" id="usernameInput" placeholder="Enter GitHub username">
+    <button id="fetchButton">Fetch Repositories</button>
+    <ul id="repositoriesList"></ul>
+
+    <script>
+        $(document).ready(function () {
+            // Define a click event for the button
+            $('#fetchButton').click(function () {
+                // Get the GitHub username from the input field
+                var username = $('#usernameInput').val();
+
+                // Use jQuery's AJAX function to make a GET request to GitHub API
+                $.ajax({
+                    url: 'https://api.github.com/users/' + username + '/repos',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        // Clear the previous content
+                        $('#repositoriesList').empty();
+
+                        // Check if the response contains valid data
+                        if (data && Array.isArray(data)) {
+                            // Iterate over the repositories and display them
+                            data.forEach(function (repo) {
+                                $('#repositoriesList').append('<li><a href="' + repo.html_url + '">' + repo.name + '</a></li>');
+                            });
+                        } else {
+                            $('#repositoriesList').html('No repositories found for ' + username);
+                        }
+                    },
+                    error: function (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
