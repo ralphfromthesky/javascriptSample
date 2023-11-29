@@ -3,7 +3,6 @@ let array = [1, 2, 3, 4, 5];
 array.shift();
 console.log(array); //[ 2, 3, 4, 5 ]
 
-
 let arr2 = [1, 2, 3, 4, 5];
 //adding element in the first of array
 arr2.unshift(9);
@@ -22,13 +21,13 @@ randomArr.push(100);
 console.log(randomArr); //[ 1, 2, 3, 4, 5, 100 ]  
 
 let thisArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  //for randoming the array
- var random1 = thisArray.sort(() => Math.random() - 0.5);
-  //for arranging ascend array
-  thisArray.sort((a, b) => a - b);
-  //for reversing the array
-  thisArray.sort((a, b) => b - a);
-  // you can also use thisArray.reverse();
+//for randoming the array
+var random1 = thisArray.sort(() => Math.random() - 0.5);
+//for arranging ascend array
+thisArray.sort((a, b) => a - b);
+//for reversing the array
+thisArray.sort((a, b) => b - a);
+// you can also use thisArray.reverse();
 console.log(random1);
 
 let string = ["name", "friends", "tropa", "enemy"];
@@ -486,13 +485,13 @@ console.log(`------>${win}`);
 function countVowels(inputString) {
   // Convert the input string to lowercase to handle both uppercase and lowercase vowels
   const lowercaseString = inputString.toLowerCase();
-  
+
   // Define a string containing all the vowels
   const vowels = "aeiou";
-  
+
   // Initialize a counter for vowels
   let vowelCount = 0;
-  
+
   // Loop through each character in the input string
   for (let i = 0; i < lowercaseString.length; i++) {
     // Check if the current character is a vowel
@@ -500,7 +499,7 @@ function countVowels(inputString) {
       vowelCount++;
     }
   }
-  
+
   return vowelCount;
 }
 
@@ -509,5 +508,33 @@ const input = "Hello, World!";
 const result = countVowels(input);
 console.log(`Number of vowels: ${result}`);
 
-const newArr = [1,2, 'ralph', 'what'];
+const newArr = [1, 2, 'ralph', 'what'];
 console.log(newArr.toString())
+
+for (let i = 0; i < 10; i++) {
+  console.log(i)
+}
+
+const randomNum = [1, 2, 3, 4, 5];
+if (randomNum.includes(5)) {
+  let thisRandom = randomNum.sort(() => Math.random() - 0.5)
+  console.log(thisRandom)
+}
+else {
+  for (let i = 0; i < randomNum.length; i++) {
+    console.log(i)
+  }
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(i)
+}let thisName = 'ralph';
+let firstName = thisName.charAt(0).toUpperCase()
+console.log(firstName);
+
+let numero = [];
+for (let i = 0; i < 1; i++) {
+const randomNumber = Math.floor(Math.random() * 900000) + 100000;
+numero.push(randomNumber);  
+}
+console.log(numero);

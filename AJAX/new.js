@@ -22,11 +22,11 @@ $(document).ready(function () {
         $('#3').fadeIn(3000)
     })
     $('#fadeOut').click(function () {
-        $('#4').fadeOut()
+        $('#4').fadeOut(.6)
         $('#5').fadeOut('slow')
         $('#6').fadeOut(3000)
     })
-    $('#slideDown').click(function () {
+    $('#slideDown').hover(() => {
         $('#panel').slideToggle()
     })
     $('#anim').click(function () {
@@ -188,38 +188,44 @@ $(document).ready(function () {
     //     }
 
     // }
-//     var names = ['alan', 'james', 'angela'];
-//     const search = document.getElementById('search')
-//     const searhInput = document.getElementById('searchName');
-//     const result = document.getElementById('results')
+        var names = ['alan', 'james', 'angela'];
+        const search = document.getElementById('search')
+        const searhInput = document.getElementById('searchName');
+        const result = document.getElementById('results')
 
-//     search.addEventListener('submit', (e) => {
-//         e.preventDefault()
-//         searchName();
-//     })
-//     const searchName = () => {
-//         var searchValue = searhInput.value.trim();
-//         if (searchValue === '') {
-//             alert('hey input!')
-//             return;
-//         }
-//         else if (searchValue !== '') {
-//             result.textContent = ''
-//             var matchName = names.filter((x) => {
-//                 return x.includes(searchValue);
-//             })
-//             if (matchName.length > 0) {
-//                 matchName.forEach((name) => {
-//                     result.textContent = `${name}`;
-//                 })
-//             }
-//             else {
-//                 result.textContent ='no names found!';
-//         }
+        search.addEventListener('submit', (e) => {
+            e.preventDefault()
+            searchName();
+        })
+        const searchName = () => {
+            var searchValue = searhInput.value.trim();
+            if (searchValue === '') {
+                alert('hey input!')
+                return;
+            }
+            else if (searchValue !== '') {
+                result.textContent = ''
+                var matchName = names.filter((x) => {
+                    return x.includes(searchValue);
+                })
+                if (matchName.length > 0) {
+                    matchName.forEach((name) => {
+                        result.textContent = `name found: ${name}`;
+                    })
+                }
+                else {
+                    result.textContent ='no names found!';
+            }
 
 
-//     }
-// }
+        }
+    }
+
+
+
+
+
+
 
 
 

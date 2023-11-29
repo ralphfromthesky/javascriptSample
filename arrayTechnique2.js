@@ -131,12 +131,15 @@ let student = [
 
 ]
 
-let passed = student.filter(x => x.grades < 80) //using to filter to look for student whos grade is less than 80
+let passed = student.filter((x) => x.grades < 80) //using to filter to look for student whos grade is less than 80
 console.log(passed)
 
 let num = [10, 30, 45, 55, 68, 25];
 let newNum = num.filter(x => x > 50)
 console.log(newNum);
+
+let searchName = student.filter((x) => x.name.startsWith('g'))
+console.log('thiss is the name' + searchName);
 
 let newStudents = student.filter(x => x['name'].startsWith('p')); // use also filter for searching names 
 console.log(newStudents)
@@ -164,3 +167,9 @@ const divisible = (num) => {
     return divs
 }
 console.log(divisible(numbers3))
+
+const nameList = ['ralph', 'rigor', 'santolorin']
+let findNames = 'rigore';
+
+const withNames = nameList.includes(names);
+console.log(withNames)
