@@ -49,3 +49,47 @@
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bored API Example</title>
+</head>
+
+<body>
+    <h1>Bored API Activity</h1>
+    <div id="activity">
+        <h1>RALPH SANTOLORIN</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const apiUrl = 'https://www.boredapi.com/api/activity';
+        const activity = document.getElementById('activity')
+
+        const tryData = async () => {
+            try {
+                const response = await axios.get(apiUrl);
+
+                if (response) {
+                    console.log(response);
+                    activity.append(response.data.activity)
+                    return;
+                } else {
+                    console.error('Request failed with status', response);
+                }
+            } catch (error) {
+                console.error('Error:', error.message);
+            }
+        };
+
+        tryData();
+
+    </script>
+</body>
+
+</html> -->

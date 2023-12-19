@@ -26,7 +26,7 @@ $(document).ready(function () {
         $('#5').fadeOut('slow')
         $('#6').fadeOut(3000)
     })
-    $('#slideDown').hover(() => {
+    $('#slideDown').click(() => {
         $('#panel').slideToggle()
     })
     $('#anim').click(function () {

@@ -15,20 +15,14 @@
 
     <script>
         $(document).ready(function () {
-            // Define a click event for the button
             $('#fetchButton').click(function () {
-                // Use jQuery's AJAX function to make a GET request to JSONPlaceholder API
                 $.ajax({
                     url: 'https://jsonplaceholder.typicode.com/posts',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
-                        // Clear the previous content
                         $('#posts-container').empty();
-
-                        // Check if the response contains valid data
                         if (data && Array.isArray(data)) {
-                            // Iterate over the posts and display them
                             data.forEach(function (post) {
                                 $('#posts-container').append('<li>' + post.title + '</li>');
                             });
