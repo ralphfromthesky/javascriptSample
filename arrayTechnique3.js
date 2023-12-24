@@ -29,3 +29,26 @@ const thisIsReduce = (x) => {
     return x.reduce((a, b) => a + b);
 }
 console.log("this is reduce " + thisIsReduce(arr))
+
+const newMapping = [1, 3,5,6,8];
+const thisNewMapping = newMapping.map((q) => (q * 5) + 100)
+console.log(thisNewMapping);
+
+const newFilter = newMapping.map((x) => {
+  return  x > 2 ? 'greater than 2' : 'less than 2';
+})
+console.log(newFilter);
+
+const student = [
+  {'name': 'andrea', 'grades' : 90},
+  {'name': 'tess', 'grades' : 80},
+  {'name': 'allen', 'grades' : 80},
+  {'name': 'andrea', 'grades' : 70}
+
+
+]
+
+const lowGrades = student.filter((x) => x.grades < 75);
+console.log(lowGrades)
+const nameWith = student.filter((x) => x.name.startsWith('t'))
+console.log(nameWith)

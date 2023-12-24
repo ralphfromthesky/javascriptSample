@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Input with Calendar Option</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    /* Style for the calendar icon */
+    .ui-datepicker-trigger {
+      margin-left: 5px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Input with calendar option -->
+<label for="calendarDate">Select Date:</label>
+<input type="text" id="calendarDate">
+<i class="ui-datepicker-trigger"></i>
+
+<!-- Display selected date in this div -->
+<div id="selectedDate"></div>
+
+<script>
+  // Enable datepicker on the input with the id "calendarDate"
+  $(document).ready(function () {
+    $("#calendarDate").datepicker({
+      dateFormat: 'yy-mm-dd', // Set the desired date format
+      showButtonPanel: true,   // Show the calendar icon
+      changeMonth: true,
+      changeYear: true,
+      onSelect: function (dateText, inst) {
+        // Display the selected date in the "selectedDate" div
+        $("#selectedDate").text("Selected Date: " + dateText);
+      }
+    });
+
+    // Add click event to the calendar icon
+    $(".ui-datepicker-trigger").click(function () {
+      $("#calendarDate").datepicker("show");
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formSearch"> <label for="Searchname">Search name</label>
+        <input type="text" id="searchName">
+        <button>Search</button>
+    </form>
+
+
+    <script>
+        const searchName = document.getElementById('searchName')
+        const formSearch = document.getElementById('formSearch')
+        const names = ['anne', 'tessa', 'joan', 'wilma'];
+
+        formSearch.addEventListener('submit', (e) => {
+            var searchNames = searchName.value
+            e.preventDefault();
+            if (searchNames.trim() === '' || null) {
+                alert('dont leave blankl');
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>
