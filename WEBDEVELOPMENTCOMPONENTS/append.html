@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Example</title>
+    <style>
+        .main {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: lightcoral;
+            margin: 5px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main" id="mainContainer">
+        <!-- Existing content (if any) -->
+    </div>
+
+    <button id="addElementButton">Add Elements</button>
+
+    <script>
+        // Function to add multiple and different child elements
+        const addElements = () => {
+            const parentElement = document.getElementById('mainContainer');
+
+            const newDiv = document.createElement('div');
+            newDiv.className = 'box';
+            
+            const newSpan = document.createElement('span');
+            newSpan.textContent = 'Text Content';
+
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'Another Text Content';
+
+            const newCircle = document.createElement('div');
+            newCircle.className = 'circle';
+
+            // Append multiple elements in a single call
+            parentElement.append(newDiv, newSpan, newParagraph, newCircle);
+        }
+
+        // Add a click event listener to the button
+        document.getElementById('addElementButton').addEventListener('click', addElements);
+    </script>
+</body>
+
+</html>

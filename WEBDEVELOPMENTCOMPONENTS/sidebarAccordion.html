@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sideBar {
+            border: 2px solid black;
+            height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            gap: 10px;
+        }
+
+        .content {
+            border: 2px solid black;
+            width: 100%;
+        }
+
+        .contentContainer {
+            height: 60vh;
+            width: 60vw;
+        }
+
+        #a {
+            background-color: red;
+        }
+
+        #b {
+            background-color: rgb(26, 19, 19);
+        }
+
+        #c {
+            background-color: rgb(158, 24, 118);
+        }
+
+        #d {
+            background-color: rgb(26, 211, 42);
+        }
+
+        #e {
+            background-color: rgb(182, 224, 28);
+        }
+
+        #f {
+            background-color: rgb(74, 8, 228);
+        }
+
+        #g {
+            background-color: rgb(55, 42, 85);
+        }
+
+        #h {
+            background-color: rgb(245, 12, 12);
+        }
+
+        li {
+            line-height: 2;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sideBar">
+            <div class="sidebarContent">
+                <ul>
+                    <li onclick="hideContent('a')">name</li>
+                    <li onclick="hideContent('b')">address</li>
+                    <li onclick="hideContent('c')">contact</li>
+                    <li onclick="hideContent('d')">school</li>
+                    <li onclick="hideContent('e')">teachers</li>
+                    <li onclick="hideContent('f')">department</li>
+                    <li onclick="hideContent('g')">inventory</li>
+                    <li onclick="hideContent('h')">settings</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="contentContainer" id="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis!</div>
+            <div class="contentContainer" id="b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fugiat fugit, dolorem corrupti totam consequatur.</div>
+            <div class="contentContainer" id="c">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, quibusdam! Sapiente, iure magnam. Ullam reprehenderit a velit? Accusamus, placeat reprehenderit.</div>
+            <div class="contentContainer" id="d">Lorem ipsum dolor sit amet.</div>
+            <div class="contentContainer" id="e">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae placeat incidunt officiis!</div>
+            <div class="contentContainer" id="f">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati omnis tempore ullam? Vel at dolorem autem.</div>
+            <div class="contentContainer" id="g">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="contentContainer" id="h">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ratione odit error.</div>
+
+        </div>
+ 
+    </div>
+    <script>
+        const contentContainer = document.querySelectorAll('.contentContainer');
+        contentContainer.forEach((x) => x.style.display = 'none');
+
+        const hideContent = (id) => {
+            contentContainer.forEach((a) => a.style.display ='none');
+            const clicked = document.getElementById(id);
+            clicked.style.display = 'block';
+        }
+
+
+    </script>
+</body>
+
+</html>

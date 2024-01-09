@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="show">show</button>
+    <div class="main">
+
+    </div>
+    <script>
+        const show = document.getElementById('show');
+        const main = document.querySelector('main');
+
+
+        show.addEventListener('click', () => showData())
+        const showData = () => {
+            const apiUrl = "https://dummyjson.com/products/";
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'JSON',
+                success: ((response) => {
+                    console.log(response.products.images)
+                    const cr1 = document.createElement('div')
+                    const images 
+                    
+        
+                }),
+                error: (() => {
+                    console.log(`error: ${error}`)
+                })
+            })
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .main {
+            display: flex;
+
+            gap: 10px;
+        }
+    </style>
+    <title>Product Images</title>
+</head>
+<body>
+
+<button id="show">Show Data</button>
+<main id="main"></main>
+
+<script>
+    const show = document.getElementById('show');
+    const main = document.getElementById('main');
+
+    show.addEventListener('click', () => showData());
+
+    const showData = () => {
+        const apiUrl = "https://dummyjson.com/products/";
+        $.ajax({
+            url: apiUrl,
+            type: 'GET',
+            dataType: 'json',
+            success: (response) => {
+                const products = response.products;
+
+
+                products.forEach(product => {
+                    const images = product.images;
+                    console.log(images)
+                    images.forEach(imageUrl => {
+                        const img = document.createElement('img');
+                        img.style.border = '2px solid red'
+                        img.src = imageUrl;
+                        main.appendChild(img);
+                    });
+                });
+            },
+            error: (error) => {
+                console.log(`error: ${error}`);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

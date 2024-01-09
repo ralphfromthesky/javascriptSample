@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Example</title>
+    <style>
+        /* Style for the collapsible content */
+        .collapsible-content {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #c40d0d;
+            border-radius: 4px;
+        }
+
+        /* Style for the collapsible button */
+        .collapsible-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .main  {
+            border: 2px solid red;
+            transition: .6s ease;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <button class="collapsible-button" onclick="toggleCollapse()">Toggle Collapse</button>
+
+        <div class="collapsible-content" id="collapsibleContent">
+            <p>This is the content that can be collapsed or expanded.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleCollapse() {
+            var content = document.getElementById("collapsibleContent");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

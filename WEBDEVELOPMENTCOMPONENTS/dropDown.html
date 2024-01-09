@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Example</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px 0;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown" id="myDropdown">
+        <button onclick="toggleDropdown()" class="dropbtn">Dropdown</button>
+        <div class="dropdown-content" id="dropdownContent">
+            <a href="#" onclick="setActive(this)">Item 1</a>
+            <a href="#" onclick="setActive(this)">Item 2</a>
+            <a href="#" onclick="setActive(this)">Item 3</a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the dropdown visibility
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // Set active class on the clicked item
+        function setActive(element) {
+            const dropdownItems = document.querySelectorAll('.dropdown-content a');
+
+            // Remove active class from all items
+            dropdownItems.forEach(item => item.classList.remove('active'));
+
+            // Add active class to the clicked item
+            element.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

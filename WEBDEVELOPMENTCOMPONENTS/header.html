@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 10vh;
+            background-color: red;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .main-body {
+            height: 150vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header.sticky {
+            background: black;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+            position: fixed;
+            height: 15vh;
+            top: 0;
+            width: 100%;
+            transition: .6s ease;
+            color: white;
+
+
+        }
+
+        .amount-inputs {
+            position: relative;
+        }
+
+        input {
+            height: 5vh;
+            border-radius: 5px;
+
+        }
+
+        .amount-inputs label {
+            position: absolute;
+            top: -10px;
+            background-color: white;
+            left: 10px;
+        }
+
+        .typeHere {
+            position: relative;
+        }
+
+        .typeHere label {
+            position: absolute;
+            top: 12px;
+            left: 30px;
+            transition: .3s ease;
+            color: gray;
+        }
+        .typeHere input {
+            z-index: 10;
+        }
+
+        .goUp {
+            transform: translateY(-20px);
+            background-color: white;
+            color: red;  
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="nav-link">
+                <h1>a</h1>
+            </div>
+            <div class="nav-link">
+                <h1>b</h1>
+            </div>
+            <div class="nav-link">
+                <h1>c</h1>
+            </div>
+            <div class="nav-link">
+                <h1>d</h1>
+            </div>
+            <div class="nav-link">
+                <h1>e</h1>
+            </div>
+            <div class="nav-link">
+                <h1>f</h1>
+            </div>
+            <div class="nav-link">
+                <h1>g</h1>
+            </div>
+        </header>
+
+        <div class="main-body">
+
+            <div class="inputs">
+                <div class="amount-inputs">
+                    <label for="">Amount of deposit</label>
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="inputs">
+                <div class="typeHere">
+                    <label for="" id="label2">Amount of deposit</label>
+                    <input type="text" name="" id="input2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const header = document.querySelector("header");
+        const input2 = document.getElementById('input2');
+        const label2 = document.getElementById('label2');
+
+        input2.addEventListener('focus', () => {
+            label2.classList.add('goUp');
+            console.log('dfasdfsa')
+        })
+        window.addEventListener("scroll", function () {
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" container="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  
+    <title>Document</title>
+    <style>
+        .items.active {
+            display: block;
+       
+        }
+
+        .items {
+            display: none;
+      
+        }
+
+        .container {
+            border: 2px solid red;
+        }
+
+        .accHeader {
+            padding: 15px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-between;
+        }
+        .bx.active {
+            transition: .3s ease;
+            transform: rotate(180deg);
+        }
+        .items p {
+            margin-left: 40px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="accHeader"><h1>main</h1> <h1><i class='bx bxs-chevron-up'></i></h1></div>
+            <div class="items">
+                <p>ralph san</p>
+                <p>ralph san</p>
+                <p>ralph san</p>
+                <p>ralph san</p>
+                <p>ralph san</p>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="accHeader"><h1>bbbbb</h1> <h1><i class='bx bxs-chevron-up'></i></h1></div>
+
+            <div class="items">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="accHeader"><h1>bbbb</h1> <h1><i class='bx bxs-chevron-up'></i></h1></div>
+            <div class="items">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deserunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deserunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deserunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deserunt.</p>
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="accHeader"><h1>cccc</h1> <h1><i class='bx bxs-chevron-up'></i></h1></div>
+
+            <div class="items">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="accHeader"><h1>dddd</h1> <h1><i class='bx bxs-chevron-up'></i></h1></div>
+            <div class="items">
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelectorAll('.container')
+        const accHeader = document.querySelectorAll('.accHeader')
+        const items = document.querySelectorAll('.items')
+        const bx = document.querySelectorAll('.bx')
+
+
+ 
+        accHeader.forEach((head, index) => {
+            head.addEventListener('click', () => {
+                const item = container[index].querySelector('.items');
+                const bxx = container[index].querySelector('.bx')
+                item.classList.toggle('active')
+                bxx.classList.toggle('active')
+            })
+        })
+        
+    </script>
+  
+</body>
+
+</html>

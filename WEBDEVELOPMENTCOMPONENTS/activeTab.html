@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main button {
+            background-color: aliceblue;
+            padding: 20px;
+            
+        }
+        .main {
+            display: flex;
+            gap: 10px;
+        }
+        button.active {
+            background-color: red;
+            border-radius: 10px;
+        }
+        .main.active {
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <button id="home">home</button><button id="nav">nav</button><button id="link">link</button><button id="contact">contact</button><button id="info">info</button>
+    </div>
+    <script>
+        const home = document.getElementById('home')
+        const nav = document.getElementById('nav')
+        const link = document.getElementById('link')
+        const contact = document.getElementById('contact')
+        const info = document.getElementById('info')
+
+        home.addEventListener('click', () => toggleActive(home))
+        nav.addEventListener('click', () => toggleActive(nav))
+        link.addEventListener('click', () => toggleActive(link))
+        contact.addEventListener('click', () => toggleActive(contact))
+        info.addEventListener('click', () => toggleActive(info))
+
+        const toggleActive = (button) => {
+            home.classList.remove('active')
+            nav.classList.remove('active')
+            link.classList.remove('active')
+            contact.classList.remove('active')
+            info.classList.remove('active')
+            button.classList.add('active')
+
+        }
+        
+
+    </script>
+</body>
+
+</html>
