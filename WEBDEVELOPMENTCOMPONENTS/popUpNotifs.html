@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main {
+            height: 200vh;
+            border: 2px solid red;
+            position: relative;
+        }
+
+        .popup1 {
+            border: 2px solid gra;
+            height: 15vh;
+            background-color: rgb(22, 25, 27);
+            width: 20vw;
+            color: white;
+            border-radius: 5px;
+            position: fixed;
+            top: 40%;
+            left: 35%;
+            display: none;
+
+        }
+
+        .popup2 {
+            border: 2px solid gra;
+            height: 15vh;
+            background-color: rgb(37, 138, 206);
+            width: 20vw;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <button id="pop">pop1</button>
+        <button id="pop2">pop2</button>
+
+        <div class="popup1">this is pop up </div>
+        <div class="popup2">this is notif</div>
+    </div>
+
+    <script>
+        const pop1 = document.querySelector('.popup1')
+        const btn1 = document.getElementById('pop')
+        const btn2 = document.getElementById('pop2')
+
+        btn2.addEventListener('click', () => {
+            pop1.style.display = 'block'
+            console.log('fdasfasdfasfasdf')
+        })
+
+
+    </script>
+</body>
+
+</html>

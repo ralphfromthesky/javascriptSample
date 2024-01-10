@@ -131,9 +131,8 @@ var BetHistType = [
   },
 ];
 
-const loop = (loopers) => {
-    for(let i = 0; i < loopers.length; i++) {
-        console.log(loopers[i])
-    }
-}
-loop(BetHistType);
+
+
+BetHistType.forEach((bet) => {
+  console.log(bet.title)
+})
