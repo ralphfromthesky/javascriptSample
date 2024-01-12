@@ -1,3 +1,4 @@
+
 var BetHistType = [
   {
     id: "sport",
@@ -131,8 +132,34 @@ var BetHistType = [
   },
 ];
 
+const prod = document.querySelector(".main");
 
+BetHistType.forEach((bet, i) => {
+  const child1 = document.createElement("div");
+  const child2 = document.createElement("div");
+  const child3 = document.createElement("div");
+  const child4 = document.createElement("div");
 
-BetHistType.forEach((bet) => {
-  console.log(bet.title)
-})
+  child3.textContent = `title: ${bet.title}`;
+  child2.innerHTML = `<h6>AI: ${bet.API}</h6>`;
+  child1.innerText = `id: ${i + 1} - ${bet.id}`;
+  child1.classList.add("firstChild");
+
+  bet.tabs.forEach((tab) => {
+    const tabElement = document.createElement("p");
+    const tabContent = Object.values(tab)[0];
+    const tabLabel = Object.keys(tab)[0];
+    tabElement.textContent = `${tabLabel}: ${tabContent}`;
+    child4.appendChild(tabElement);
+  });
+
+  prod.append(child1, child3, child2, child4);
+
+  const allDiv = document.querySelectorAll("div");
+  allDiv.forEach((div) => {
+    div.addEventListener("click", () => {
+      div.classList.add("active");
+    });
+
+  });
+});
