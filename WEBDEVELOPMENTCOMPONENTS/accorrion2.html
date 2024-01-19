@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-header {
+            border: 2px solid black;
+            position: relative;
+            overflow: hidden;
+            transition: .6s;
+        }
+
+        .main-header.active {
+            padding-bottom: 150px;
+        }
+
+        .item {
+            border: 2px solid red;
+            position: absolute;
+            width: 40vw;
+        }
+
+        .item.active {
+
+            border: 5px solid green;
+        }
+
+        p.active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-header">
+            <h1>this is the header</h1>
+            <div class="item">
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+            </div>
+        </div>
+        <div class="main-header">
+            <h1>this is the header</h1>
+            <div class="item">
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+            </div>
+        </div>
+        <div class="main-header">
+            <h1>this is the header</h1>
+            <div class="item">
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+            </div>
+        </div>
+        <div class="main-header">
+            <h1>this is the header</h1>
+            <div class="item">
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+            </div>
+        </div>
+        <div class="main-header">
+            <h1>this is the header</h1>
+            <div class="item">
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+                <p class="par">this is sammple</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mainHead = document.querySelectorAll('.main-header');
+        const item = document.querySelectorAll('.item')
+        const p = document.querySelectorAll('p')
+
+        mainHead.forEach((head) => {
+            head.addEventListener('click', () => {
+            head.classList.toggle('active');
+            })
+        })
+
+        item.forEach((items, i) => {
+            items.addEventListener('mouseover', () => {
+                mainHead[i].style.zIndex = -1;
+
+            })
+        })
+        item.forEach((items, i) => {
+            items.addEventListener('mouseout', () => {
+                mainHead[i].style.zIndex = 1;
+            })
+        })
+
+
+    </script>
+
+</body>
+
+</html>

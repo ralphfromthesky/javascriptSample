@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .dpickbtn {
+            display: flex;
+        }
+
+        .newDiv {
+            border: 2px solid gray;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="dpickbtn">
+            <input type="date" name="" id="dpick">
+            <button id="btnPick">PICK</button>
+        </div>
+    </div>
+    <script>
+        const btnPick = document.getElementById('btnPick');
+        const main = document.querySelector('.main')
+    
+        btnPick.addEventListener('click', () => {
+            const existingDivs = main.querySelectorAll('.newDiv');
+
+            const dp = document.getElementById('dpick').value;
+                if (!dp || Array.from(existingDivs).some((divs) => divs.textContent === dp)) {
+                return;
+            }
+            
+            const addDiv = document.createElement('div');
+            addDiv.classList.add('newDiv');
+            addDiv.textContent = dp;
+            main.append(addDiv);
+        });
+    </script>
+    
+</body>
+
+</html>

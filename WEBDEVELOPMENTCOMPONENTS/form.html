@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>axios</title>
+</head>
+<style>
+    .main {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        width: 20vw;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .formDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    input {
+        margin: 5px 0;
+        width: 61%;
+    }
+    .noName {
+        border: 2px solid red;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <form id="sub">
+            <div class="formDiv">
+                <label for="">Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="formDiv">
+                <label for="">Email Add</label>
+                <input type="text" id="email">
+            </div>
+            <div class="formDiv">
+                <label for="">Message</label>
+                <textarea name="" id="text" cols="30" rows="10"></textarea>
+
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+    <script>
+        const sub = document.getElementById('sub');
+
+
+        sub.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const name = document.getElementById('name').value.trim()
+            const email = document.getElementById('email').value.trim()
+            const text = document.getElementById('text').value.trim()
+            const nameInput = document.getElementById('name')
+
+            if (name === '') {
+                alert('cant be blank name!')
+                nameInput.classList.add('noName')
+                return;
+
+            }
+
+            if (email === '') {
+                alert('cant be blank email')
+                nameInput.classList.remove('noName')
+                return;
+            }
+            if (text === '') {
+                alert('cant be blank message')
+                return;
+            }
+            if (name, email, text) {
+                sendData()
+                // if(sendData) {
+                //     setTimeout(() => {
+                //         window.location.reload()
+                //     }, 3000)
+                // }
+
+
+            }
+
+
+
+
+        })
+        const sendData = async () => {
+            const url = 'https://jsonplaceholder.typicode.com/posts'
+            const formdata = new FormData(sub);
+
+            try {
+                const response = await axios.post(url, formdata)
+                console.log(response.data)
+                alert('succesfully send the data!')
+                name.value = '';
+                email.value = '';
+                text.value = '';
+
+            } catch (error) {
+                alert(`error: ${error}`)
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

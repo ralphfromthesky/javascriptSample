@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            position: relative;
+        }
+
+        .modalSample {
+            background-color: aliceblue;
+            border: 2px solid gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30vw;
+            border-radius: 5px;
+            position: absolute;
+            top: 30vh;
+            left: 30%;
+            display: none;
+        }
+
+        .head {
+            background-color: antiquewhite;
+            width: inherit;
+            padding: 20px;
+        }
+
+        .foot {
+            background-color: antiquewhite;
+            width: inherit;
+            padding: 20px;
+        }
+
+        .modalBody {
+            margin: 20px 0;
+        }
+
+        .blurDiv {
+            background-color: rgb(0, 0, 0);
+            opacity: .5;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            display: none;
+        }
+
+
+        .scale-in-center {
+            animation: scale-in-center .2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            display: block;
+        }
+
+        @keyframes scale-in-center {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="main">
+        <button id="btn"> showModal</button>
+        
+        <!-- <div class="blurDiv">
+        </div> -->
+        <div class="modalSample">
+            <div class="head">
+                <h3>this is header</h3>
+            </div>
+            <hr>
+            <div class="modalBody">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ex?
+            </div>
+            <div class="foot">
+                <h3>this is footer</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const btn = document.getElementById('btn');
+        const blurDiv = document.querySelector('.blurDiv');
+        const modalSample = document.querySelector('.modalSample');
+        btn.addEventListener('click', () => {
+            modalSample.classList.toggle('scale-in-center')
+            blurDiv.classList.toggle('scale-in-center')
+            console.log('fdasdfdasf')
+        })
+    </script>
+</body>
+
+</html>

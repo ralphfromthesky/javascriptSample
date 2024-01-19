@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main {
+            position: relative;
+            height: 100vh;
+        }
+
+        .main-toast {
+            height: 15vh;
+            border: 2px solid black;
+            width: 20vw;
+            border-radius: 10px;
+            border-left: 10px solid rgb(150, 243, 11);
+            position: fixed;
+            right: 0;
+            top: 20vh;
+            padding: 5px;
+            display: none;
+        }
+
+        .toasted {
+            animation: toastd .3s ease forwards;
+            display: block;
+        }
+
+        .toasted {
+            animation: toasters .6s ease forwards;
+        }
+        .fadeOut {
+            animation: fade 1s ease;
+        }
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes toasters {
+            0% {
+                transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+                transform-origin: 50% 100%;
+                filter: blur(40px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) scaleY(1) scaleX(1);
+                transform-origin: 50% 50%;
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+
+        <button id="toast">TOAST</button>
+
+        <div class="main-toast">
+            <div class="toast-header">
+                <h1>Info</h1>
+            </div>
+            <hr>
+
+        </div>
+    </div>
+    <script>
+        const toast = document.getElementById('toast')
+        const mainToast = document.querySelector('.main-toast')
+
+        toast.addEventListener('click', () => {
+            mainToast.classList.add('toasted')
+            setTimeout(() => {
+                mainToast.classList.remove('toasted')
+                // mainToast.classList.add('fadeOut')
+            }, 2000)
+        })
+
+    </script>
+
+</body>
+
+</html>
